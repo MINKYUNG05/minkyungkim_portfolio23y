@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #wrap {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            position: relative;
+        }
+
+        .main {
+            width: 80%;
+            height: 100%;
+            background-color: transparent;
+            position: relative;
+        }
+
+        .index {
+            width: 20%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            z-index: 5;
+            transition: all 1s;
+            background-color: transparent;
+            justify-content: flex-end;
+            
+        }
+
+        .title {
+            max-width: 75px;
+            flex-basis: 75px;
+            flex-grow: 1;
+            border: 1px solid #333;
+        }
+
+        .title {
+            background-color: springgreen;
+        }
+
+        .content {
+            flex-basis: 0px;
+            flex-grow: 0;
+            height: 100%;
+        }
+
+        .content:nth-of-type(2) {
+            background-color: tomato;
+        }
+
+        .content:nth-of-type(4) {
+            background-color: olive;
+        }
+
+        .content:nth-of-type(6) {
+            background-color: green;
+        }
+
+        .content:nth-of-type(8) {
+            background-color: skyblue;
+        }
+
+        .content:nth-of-type(10) {
+            background-color: pink;
+        }
+
+        .content:not(:first-of-type) {
+            width: 0;
+        }
+
+        .title:before {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 0;
+            width:70px;
+            bottom: 0;
+            transition: height 0.5s ease-in-out;
+            background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.826) 100%);
+        }
+
+
+        .title:hover:before {
+            /* width: 20%; */
+            height: 90%;
+            border-bottom: 1px solid black;
+        }
+    </style>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.4.min.js"></script>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="main">메인입니다</div>
+        <div class="index">
+            <div class="title">1</div>
+            <div class="content"></div>
+            <div class="title">2</div>
+            <div class="content"></div>
+            <div class="title">3</div>
+            <div class="content"></div>
+            <div class="title">4</div>
+            <div class="content"></div>
+            <div class="title">5</div>
+            <div class="content"></div>
+        </div>
+
+    </div>
+
+    <script>
+
+        // $('.title').click(function(){
+        //     let w=$('.main').width();
+        //     // console.log($(this).next('.content').css('flex-basis'))
+        //     if($(this).next('.content').css('flex-basis')=='0px'){
+        //         $('.main').animate({marginLeft: -w},1000);
+        //         $(this).parent().css({width: '100vw'});
+        //         $(this).siblings('.content').animate({flexBasis:0});
+        //         $(this).next('.content').animate({flexBasis: w});
+
+        //     } else {
+        //         $('.main').animate({marginLeft: 0});
+        //         $(this).parent().css({width: '20%'})
+        //         $(this).next('.content').animate({flexBasis: 0});
+        //     }            
+        // });
+
+        $('.title').click(function () {
+            let w = $('.main').width();
+            // console.log($(this).next('.content').css('flex-basis'))
+            if ($(this).next('.content').css('flex-basis') == '0px') {
+                $('.main').animate({ marginLeft: -w }, 1000);
+                $(this).parent().css({ width: '100vw' });
+                $(this).siblings('.content').animate({ flexBasis: 0 });
+                $(this).next('.content').animate({ flexBasis: w });
+
+            } else {
+                $('.main').animate({ marginLeft: 0 });
+                $(this).parent().css({ width: '20%' })
+                $(this).next('.content').animate({ flexBasis: 0 });
+            }
+        });
+
+    </script>
+</body>
+
+</html>
