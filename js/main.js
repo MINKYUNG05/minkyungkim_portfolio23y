@@ -85,7 +85,7 @@ $(document).ready(function () {
 
     $(".pj-box:nth-of-type(5)").click(function () {
         // $(location).attr("href", "https://minkyung05.github.io/avatar_group_pj_new/")
-        window.open(" https://www.behance.net/gallery/170104355/just-sample-work-%28I-will-deleted%29", "_blank")
+        window.open("https://www.behance.net/meankyungkim", "_blank")
 	})
 
     });

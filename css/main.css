@@ -1462,3 +1462,38 @@
 .bottom-footer-line:nth-of-type(3) a {
     font-size: 15px;
 }
+
+
+#etc-img{
+    width: 1200px;
+    height: 700px;
+}
+
+#more{
+    width: 100%;
+    height: 500px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video {
+    width: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.video img{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 50px;
+}
+
+.video a{
+    width: 200px;
+    text-decoration: underline;
+    color:black;
+    text-align: center;
+}
